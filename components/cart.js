@@ -13,7 +13,7 @@ export default function Cart() {
       } fixed right-0 top-0 max-w-xs w-full h-full px-6 py-4 transition duration-300 transform overflow-y-auto bg-white border-l-2 border-gray-300`}
     >
       <div className="flex items-center justify-between">
-        <h3 className="text-2xl font-medium text-gray-700">Seu carrinho</h3>
+        <h3 className="text-2xl font-medium text-gray-700">Meu carrinho</h3>
         {products.length > 0 ? <button onClick={() => removeAll()}>Limpar</button> : null}
         <button onClick={() => toggle()} className="text-gray-600 focus:outline-none">
           <svg
