@@ -1,7 +1,10 @@
 import create from 'zustand';
+import { persist } from 'zustand/middleware'
 import produce, { original } from 'immer';
 
-export const useCartStore = create(set => {
+
+
+export const useCartStore = create(persist(set => {
   const setState = fn => set(produce(fn));
 
   const initialState = {
@@ -63,7 +66,7 @@ export const useCartStore = create(set => {
             state.products = newProducts;
         }),
 
-        dec: product =>
+      dec: product =>
         setState(({ state }) => {
             const newProducts = state.products.map(p => {
               if (p.id === product.id) {
@@ -78,4 +81,4 @@ export const useCartStore = create(set => {
 
     },
   };
-});
+}));
